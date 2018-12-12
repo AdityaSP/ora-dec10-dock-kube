@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: helloworld-dep-spa
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: helloworld-spa
+    spec:
+      containers:
+      - name: myapache2-spa
+        image: adityaregistry.azurecr.io/myapache2-code-spa
+        ports:
+        - name: spa-port
+          containerPort: 80
