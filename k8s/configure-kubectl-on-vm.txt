@@ -3,4 +3,6 @@ chmod +x kubectl
 mkdir ~/.kube
 cp /var/lib/localkube/kubeconfig /home/docker/.kube/config
 sudo chmod -R 777 /var/lib/localkube/certs
-./kubectl get pods
+sudo cp ./kubectl /usr/bin/
+kubectl get pods
+export PS1='$PWD> '
